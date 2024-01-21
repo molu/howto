@@ -1,0 +1,39 @@
+name: Deploy
+on:
+  release:
+    types: [created]
+
+defaults:
+  run:
+    shell: bash
+    
+permissions:
+  contents: write
+  
+jobs:
+  release:
+    name: Deploy release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        target:
+          - x86_64-unknown-linux-gnu
+          - x86_64-apple-darwin
+          - x86_64-pc-windows-msvc
+        include:
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+          - target: x86_64-apple-darwin
+            os: macos-latest
+          - target: x86_64-pc-windows-msvc
+            os: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install Rust
+      run: ci/install-rust.sh stable ${{ matrix.target }}
+    - name: Build asset
+      run: ci/release.sh ${{ matrix.os }} ${{ matrix.target }}
+    - name: Update release with new asset
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: gh release upload $TAG $ASSET

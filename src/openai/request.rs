@@ -10,7 +10,7 @@ pub fn request_openai(api_key: String, prompt: String) -> Result<String, Error> 
 
     let message: Message = Message {
         content: prompt,
-        role: "system".to_string(),
+        role: "user".to_string(),
     };
 
     let json_body: GPTRequest = GPTRequest {

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Code taken from the mdBook repo: https://github.com/rust-lang/mdBook
 # Builds the release and creates an archive and optionally deploys to GitHub.
 set -ex
 

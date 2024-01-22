@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Code taken from the mdBook repo: https://github.com/rust-lang/mdBook
 # Install/update rust.
 # The first argument should be the toolchain to install.
 

@@ -6,7 +6,7 @@ Simple, GPT-4 powered, command-line tools designed to assist IT professionals wi
 
 1. Set `OPENAI_API_KEY` environment variable containing OpenAI API key.
 2. Download the release binaries or (modify the code and) build them by yourself using `cargo build -r`.
-3. Place the binary in your `PATH`.
+3. Place the `howto` and `whatis` binaries in your `PATH`.
 
 ## Usage examples
 

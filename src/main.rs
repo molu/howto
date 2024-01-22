@@ -24,7 +24,7 @@ fn main() {
             Err(err) => panic!("{}", err),
         },
         Err(_) => {
-            panic!("OPENAI_API_KEY environment variable is not correct!");
+            panic!("OPENAI_API_KEY environment variable is not set!");
         }
     }
 }

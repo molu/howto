@@ -57,14 +57,18 @@ The decoded string is: https://www.youtube.com/watch?v=dQw4w9WgXcQ
 ```
 
 ```shell
-$ whatis lol
+$ whatis xss
 
-Internet slang for "laugh out loud."
+Cross-Site Scripting
 ```
 
 #### With verbose flag set (`-v` or `--verbose`)
 
 ```shell
-$ whatis lol -v
+$ whatis xss -v`
 
-"Lol" is an acronym for "laugh out loud." It is commonly used in informal communication, such as text messaging or online chats, to indicate that something is funny or to express amusement.
+XSS, or Cross-Site Scripting, is a security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into web pages viewed by other users. A common example is when a hacker exploits the vulnerability by embedding a script in a comment or input field that is then executed in other users' browsers, potentially stealing cookies or session tokens, defacing web sites, or redirecting users to malicious sites.
+```
+
+## Credits
+The tools are based on [Gynvael's script](https://gynvael.coldwind.pl/?id=771) seen on his live streams.

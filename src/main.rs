@@ -20,11 +20,11 @@ fn main() {
     }
 
     // prepare GPT-4 prompt
-    let mut prompt: String = String::from("Answer precisely, ideally with one word, command or line of code, but prioritize accuracy.");
+    let mut prompt: String = String::from("Answer precisely, ideally with one word, command or line of code without any intro or explanation. Prioritize accuracy.");
 
     if verbose {
         prompt = String::from(
-            "Answer precisely, add one most accurate example with command, code block or sentence.",
+            "Answer precisely, add a few word of explanation with one most accurate example. Prioritize accuracy.",
         );
     }
 
